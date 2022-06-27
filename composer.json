@@ -1,0 +1,33 @@
+{
+  "name": "maximvorobiov/zelenkaru_test",
+  "description": "Zelenka.ru test - https://gist.github.com/bezdelnique/ee37c8ab9566f091e96b6e10d2d4d36b",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "maximvorobiov",
+      "email": "mvorobiov98@gmail.com"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "2.0.45",
+    "vlucas/phpdotenv": "5.4.1",
+    "php": "7.4.*"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "mvorobiov\\": "src/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true
+    }
+  }
+}

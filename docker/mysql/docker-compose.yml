@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  zelenka-db:
+    container_name: zelenka-db
+    image: mysql:8
+    expose:
+      - '3306'
+    ports:
+      - '3306:3306'
+    volumes:
+      - './dump:/docker-entrypoint-initdb.d'
+      - './data:/var/lib/mysql'
+    environment:
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+    networks:
+      - zelenka-network
+
+  zelenka-db-manager:
+    image: adminer
+    container_name: zelenka-adminer
+    ports:
+      - 8080:8080
+    depends_on:
+      - zelenka-db
+    networks:
+      - zelenka-network
+
+networks:
+  zelenka-network:
+    driver: bridge
