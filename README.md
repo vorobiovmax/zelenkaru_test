@@ -11,7 +11,7 @@ Will install project dependencies and build mysql+adminer container
 ## Install manually
  ```sh
 composer install
-docker-compose up -d
+(cd ./docker/mysql/ && docker-compose up -d)
 ```
 
 ## Adminer
